@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     const last_name = document.getElementById("last_name").value;
     const age = document.getElementById("age").value;
     const mail = document.getElementById("mail").value;
-    if (first_name !== "" || last_name !== "" || age !== "" || mail !== "") {
+    if (first_name !== "" && last_name !== "" && age !== "" && mail !== "") {
       const id = arr.length > 0 ? arr[arr.length - 1].id + 1 : 1;
       arr.push({ first_name, last_name, age, mail, id });
       saveLocal();
@@ -70,13 +70,13 @@ function output(all = arr) {
   mail.value = "";
   tbody.innerHTML = "";
   all.forEach((item, index) => {
-    tbody.innerHTML += `<tr class="grid grid-cols-6 gap-2 text-sm">
+    tbody.innerHTML += `<tr id="tr">
     <th class="">${item.id}</th>
-        <th class="">${item.first_name}</th>
-        <th class="">${item.last_name}</th>
-        <th class="">${item.age}</th>
-        <th class="">${item.mail}</th>
-        <th class=""><button id="delete" class="bg-[red] py-1 px-2 text-white rounded-lg">Delete</button></th>
+        <th class="py-2 px-4">${item.first_name}</th>
+        <th class="py-2 px-4">${item.last_name}</th>
+        <th class="py-2 px-4">${item.age}</th>
+        <th class="py-2 px-4">${item.mail}</th>
+        <th class=""><button id="delete" class="bg-red-600 hover:bg-red-500 text-white py-1 px-2 rounded-lg">Delete</button></th>
     </tr>`;
     tbody.querySelector("#delete").addEventListener("click", () => {
       all.splice(index, 1);

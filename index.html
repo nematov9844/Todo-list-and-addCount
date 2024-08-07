@@ -6,6 +6,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Add-count</title>
   </head>
+  <style>
+    #tr{
+        display: grid;
+        grid-template-columns: 1fr 3fr 3fr 1fr 4fr 2fr;
+        gap: 10px;
+        padding: 0 20px;
+        align-items: center;
+
+    }
+  </style>
   <body>
    <div class="flex w-full bg-blue-400 justify-center h-screen">
     <div class="w-[500px] shadow-lg shadow-black rounded-md bg-gradient-to-t from-slate-600 to-slate-950 h-[300px] my-auto overflow-auto ">
@@ -16,7 +26,7 @@
     </div>
    </div>
    <div class="w-full flex flex-col gap-5  p-6  bg-gradient-to-r from-purple-800 to-purple-400 justify-evenly items-center h-screen">
-    <form id="add_user" class=" w-[500px] h-[300px] rounded-md bg-gradient-to-r from-fuchsia-400 to-fuchsia-700 flex flex-col gap-3 p-5 shadow-black shadow-lg">
+    <form id="add_user" class="w-[95%]     md:w-[500px] h-[300px] rounded-md bg-gradient-to-r from-fuchsia-400 to-fuchsia-700 flex flex-col gap-3 p-5 shadow-black shadow-lg">
         <div class="flex gap-4">
             <input id="search_input" type="text" class=" py-1 px-2 rounded-md" placeholder="Search">
         </div>
@@ -26,29 +36,21 @@
         <input id="mail" type="email" class="py-1 px-2 rounded-md outline-none focus:border-2 focus:border-fuchsia-700" placeholder="Enter your Mail">
         <button type="submit" class="py-1 px-2 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-300 hover:text-[#00000076]" >Add User</button>
     </form>
-    <table class="bg-[#0000005d] text-fuchsia-300 flex flex-col gap-4 w-[95%] md:w-auto rounded-md  divide-y divide-gray-300 shadow-lg shadow-black">
-        <thead class="text-sm  rounded-t-md">
-            <tr class="w-full grid grid-cols-6">
-                <th class="py-2 px-4">ID</th>
-                <th class="py-2 px-4">First Name</th>
-                <th class="py-2 px-4">Last Name</th>
-                <th class="py-2 px-4">Age</th>
-                <th class="py-2 px-4">Mail</th>
-                <th class="py-2 px-4 border-none">
-                    <button id="remove_all" class="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded-lg">Remove All</button>
+    <table class="bg-[#0000005d] pt-4 text-fuchsia-300 flex flex-col gap-4 w-[95%]  rounded-md  divide-y divide-gray-300 shadow-lg shadow-black">
+        <thead class="text-xl   rounded-md">
+            <tr id="tr">
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Mail</th>
+                <th>
+                    <button id="remove_all" class="bg-red-600 hover:bg-red-500 text-white py-1 px-2  rounded-lg">Remove</button>
                 </th>
             </tr>
         </thead>
-        <tbody id="tbody" class="text-sm w-full flex flex-col gap-4">
-            <tr class="grid grid-cols-5 gap-4">
-                <td class="py-2 px-4">name</td>
-                <td class="py-2 px-4">last</td>
-                <td class="py-2 px-4">20</td>
-                <td class="py-2 px-4">jeki@mail.com</td>
-                <td class="py-2 px-4 text-center">
-                    <button class="bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded-lg">Remove</button>
-                </td>
-            </tr>
+        <tbody id="tbody" class="text-xl w-full py-4 flex flex-col gap-4">
+            
         </tbody>
     </table>
     
